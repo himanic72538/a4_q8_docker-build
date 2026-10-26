@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/himanic72538/a4_q8_docker-build.git'
+                checkout scm
             }
         }
         stage('Build Docker Image') {
