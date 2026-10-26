@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Repository') {
+        stage('Checkout Code') {
             steps {
                 git 'https://github.com/himanic72538/a4_q8_docker-build.git'
             }
         }
-        stage('Display Message') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Build executed successfully from Jenkinsfile!'
+                sh 'docker build -t my-flask-app .'
             }
         }
     }
